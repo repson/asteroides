@@ -26,6 +26,9 @@
             android:label="Acerca de ..." 
             android:theme="@android:style/Theme.Dialog">
         </activity>>
+        <activity          
+            android:name="com.example.asteroides.Preferencias">                     
+        </activity>>
     </application>
 
 </manifest>

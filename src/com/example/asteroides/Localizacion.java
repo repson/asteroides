@@ -54,7 +54,15 @@ public class Localizacion extends Activity {
          	case R.id.acercaDe:
          		lanzarAcercaDe(null);
                 break;
+         	case R.id.config:
+         		lanzarPreferencias(null);
+         		break;
          }
          return true; /** true -> consumimos el item, no se propaga*/
+     }
+     
+     public void lanzarPreferencias(View view){
+         Intent i = new Intent(this, Preferencias.class);
+         startActivity(i);
      }
 }

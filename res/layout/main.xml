@@ -22,6 +22,7 @@
       style="@style/TextoAsteroides.Botones"
       android:layout_height="wrap_content"
       android:layout_width="fill_parent"
+      android:onClick="lanzarPreferencias"
       android:text="@string/Configurar"/>
   
   <Button android:id="@+id/Button03"
