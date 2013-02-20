@@ -3,17 +3,15 @@
     package="com.example.asteroides"
     android:versionCode="1"
     android:versionName="1.0" >
-
     <uses-sdk
         android:minSdkVersion="7"
         android:targetSdkVersion="17" />
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/TemaAsteroides" >
-        <activity
+        <activity 
             android:name="com.example.asteroides.Localizacion"
             android:label="@string/app_name" >
             <intent-filter>
@@ -21,14 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity          
+        <activity 
             android:name="com.example.asteroides.AcercaDe"                       
             android:label="Acerca de ..." 
             android:theme="@android:style/Theme.Dialog">
-        </activity>>
-        <activity          
-            android:name="com.example.asteroides.Preferencias">                     
-        </activity>>
+        </activity>
+        <activity 
+            android:name="com.example.asteroides.Preferencias">	
+        </activity>
+        <activity 
+            android:name="com.example.asteroides.Puntuaciones">	
+        </activity>
     </application>
-
 </manifest>
