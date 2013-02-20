@@ -15,6 +15,8 @@ public class Localizacion extends Activity {
 
 	private Button bAcercaDe;
 	private Button bSalir;
+	public static AlmacenPuntuaciones almacen = 
+			new AlmacenPuntuacionesArray();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,7 @@ public class Localizacion extends Activity {
 		bSalir = (Button) findViewById(R.id.Button04);
 		bSalir.setOnClickListener(new OnClickListener() {
 			public void onClick(View view){
-				finish();
+				lanzarPuntuaciones(null);
 			}
 		});
 	}
@@ -64,5 +66,10 @@ public class Localizacion extends Activity {
      public void lanzarPreferencias(View view){
          Intent i = new Intent(this, Preferencias.class);
          startActivity(i);
+     }
+     
+     public void lanzarPuntuaciones(View view) {
+    	 // Intent i = new Intent(this, Puntuaciones.class);
+    	 // startActivity(i);
      }
 }
