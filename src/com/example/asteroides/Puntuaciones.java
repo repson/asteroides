@@ -11,9 +11,7 @@ public class Puntuaciones extends ListActivity {
 	public void onCreate(Bundle saveInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.puntuaciones);
-		setListAdapter(new ArrayAdapter<String>(this,
-						R.layout.elemento_lista,
-						R.id.titulo,
-						Localizacion.almacen.listaPuntuaciones(10)));
+		setListAdapter(new MiAdaptador(this,
+	             Localizacion.almacen.listaPuntuaciones(10)));
 	}
 }
