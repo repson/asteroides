@@ -7,4 +7,6 @@
     <string name="tituloAplicacion">Asteroides</string>
     <string name="hello">Hello World, Asteroides! </string>
     <string name="app_name">Asteroides</string>
+    <string name="Salir">Exit</string>
+    <string name="textoAcercaDe">"This program has been developed as an example in the Android course to demonstrate how to launch new activity from the main activity."</string>
 </resources>
