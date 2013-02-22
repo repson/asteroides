@@ -3,10 +3,17 @@
     <string name="Arrancar">Play</string>
     <string name="Configurar">Config</string>
     <string name="Acercade">About</string>
-    <string name="Puntuaciones">Exit</string>
+    <string name="Puntuaciones">Scores</string>
     <string name="tituloAplicacion">Asteroides</string>
     <string name="hello">Hello World, Asteroides! </string>
     <string name="app_name">Asteroides</string>
     <string name="Salir">Exit</string>
     <string name="textoAcercaDe">"This program has been developed as an example in the Android course to demonstrate how to launch new activity from the main activity."</string>
+    <string name="NoPuntuaciones">"No ratings"</string>
+	<string name="ReproducirMusica">"Play music"</string>
+	<string name="TipoGraficos">"Type of graphics"</string>
+	<string name="NumeroFragmentos">"Number of fragments"</string>
+	<string name="MusicaSummary">"Play background music"</string>
+	<string name="GraficosSummary">"Choose graphics rendering"</string>
+	<string name="FragmentosSummary">"In few pieces divides an asteroid"</string>
 </resources>

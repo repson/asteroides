@@ -4,18 +4,18 @@
   android:key="preferencias_principal" >
   <CheckBoxPreference
     android:key="musica"
-    android:title="Reproducir música"
-    android:summary="Se reproduce música de fondo"/>
+    android:title="@string/ReproducirMusica"
+    android:summary="@string/MusicaSummary"/>
   <ListPreference
     android:key="graficos"
-    android:title="Tipo de gráficos"
-    android:summary="Se escoge la representación de gráficos"
+    android:title="@string/TipoGraficos"
+    android:summary="@string/GraficosSummary"
     android:entries="@array/tiposGraficos"
     android:entryValues="@array/tiposGraficosValores"
     android:defaultValue="1"/>
   <EditTextPreference
     android:key="fragmentos"
-    android:title="Número de Fragmentos"
-    android:summary="En cuantos trozos se divide un asteroide"
+    android:title="@string/NumeroFragmentos"
+    android:summary="@string/FragmentosSummary"
     android:defaultValue="3"/>
 </PreferenceScreen>

@@ -57,8 +57,15 @@ public final class R {
         public static final int Acercade=0x7f080002;
         public static final int Arrancar=0x7f080000;
         public static final int Configurar=0x7f080001;
+        public static final int FragmentosSummary=0x7f080010;
+        public static final int GraficosSummary=0x7f08000f;
+        public static final int MusicaSummary=0x7f08000e;
+        public static final int NoPuntuaciones=0x7f08000a;
+        public static final int NumeroFragmentos=0x7f08000d;
         public static final int Puntuaciones=0x7f080003;
+        public static final int ReproducirMusica=0x7f08000b;
         public static final int Salir=0x7f080008;
+        public static final int TipoGraficos=0x7f08000c;
         public static final int action_settings=0x7f080007;
         public static final int app_name=0x7f080006;
         public static final int hello=0x7f080005;

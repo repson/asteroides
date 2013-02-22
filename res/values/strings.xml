@@ -10,4 +10,11 @@
     <string name="action_settings">Configuracion</string>
     <string name="Salir">Salir</string>
     <string name="textoAcercaDe">"Este programa ha sido desarrollado como ejemplo en el curso de Android para demostrar cómo se pueden lanzar nuevas actividades desde la actividad principal."</string>
+	<string name="NoPuntuaciones">"No hay puntuaciones"</string>
+	<string name="ReproducirMusica">"Reproducir música"</string>
+	<string name="TipoGraficos">"Tipo de gráficos"</string>
+	<string name="NumeroFragmentos">"Número de Fragmentos"</string>
+	<string name="MusicaSummary">"Se reproduce música de fondo"</string>
+	<string name="GraficosSummary">"Se escoge la representación de gráficos"</string>
+	<string name="FragmentosSummary">"En cuantos trozos se divide un asteroide"</string>
 </resources>

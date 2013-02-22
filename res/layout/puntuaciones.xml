@@ -7,7 +7,7 @@ android:layout_height="fill_parent">
 <TextView
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
-       android:text="Puntuaciones"
+       android:text="@string/Puntuaciones"
        android:gravity="center"
        android:layout_margin="10px"
        android:textSize="10pt"/>
@@ -24,6 +24,6 @@ android:layout_height="fill_parent">
               android:id="@android:id/empty"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
-              android:text="No hay puntuaciones" />
+              android:text="@string/NoPuntuaciones" />
 </FrameLayout>
 </LinearLayout>
