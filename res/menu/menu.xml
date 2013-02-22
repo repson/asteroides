@@ -4,8 +4,8 @@
         android:title="Configuración" 
         android:icon="@android:drawable/ic_menu_preferences">
     </item>
-    <item android:id="@+id/acercaDe" 
-        android:title="Acerca de ..." 
+    <item android:id="@+id/salir" 
+        android:title="Salir" 
         android:icon="@android:drawable/ic_menu_info_details">
     </item>
 </menu>

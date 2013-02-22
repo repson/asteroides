@@ -11,7 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 
-public class Localizacion extends Activity {
+public class Asteroides extends Activity {
 
 	private Button bAcercaDe;
 	private Button bSalir;
@@ -47,20 +47,22 @@ public class Localizacion extends Activity {
         super.onCreateOptionsMenu(menu);
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
-        return true; /** true -> el menú ya está visible */
+        /** true -> el menú ya está visible */
+        return true;
      }
     
      @Override 
      public boolean onOptionsItemSelected(MenuItem item) {
     	 switch (item.getItemId()) {
-         	case R.id.acercaDe:
-         		lanzarAcercaDe(null);
+         	case R.id.salir:
+         		finish();
                 break;
          	case R.id.config:
          		lanzarPreferencias(null);
          		break;
          }
-         return true; /** true -> consumimos el item, no se propaga*/
+    	 /** true -> consumimos el item, no se propaga */
+         return true;
      }
      
      public void lanzarPreferencias(View view){

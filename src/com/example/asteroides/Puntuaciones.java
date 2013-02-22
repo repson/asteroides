@@ -14,7 +14,7 @@ public class Puntuaciones extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.puntuaciones);
 		setListAdapter(new MiAdaptador(this,
-	             Localizacion.almacen.listaPuntuaciones(10)));
+	             Asteroides.almacen.listaPuntuaciones(10)));
 	}
 	
 	@Override

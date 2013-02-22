@@ -36,10 +36,10 @@ public final class R {
         public static final int Button03=0x7f0a0006;
         public static final int Button04=0x7f0a0007;
         public static final int TextView01=0x7f0a0000;
-        public static final int acercaDe=0x7f0a000a;
         public static final int action_settings=0x7f0a0008;
         public static final int config=0x7f0a0009;
         public static final int icono=0x7f0a0001;
+        public static final int salir=0x7f0a000a;
         public static final int subtitulo=0x7f0a0003;
         public static final int titulo=0x7f0a0002;
     }
