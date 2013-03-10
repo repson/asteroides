@@ -1,15 +1,20 @@
 package com.example.asteroides;
 
+import java.util.List;
 import java.util.Vector;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-public class VistaJuego extends View {
+public class VistaJuego extends View implements SensorEventListener{
     // //// ASTEROIDES //////
     private Vector<Grafico> Asteroides; // Vector con los Asteroides
     private int numAsteroides= 5; // Número inicial de asteroides
@@ -46,6 +51,14 @@ public class VistaJuego extends View {
             asteroide.setAngulo((int) (Math.random() * 360));
             asteroide.setRotacion((int) (Math.random() * 8 - 4));
             Asteroides.add(asteroide);
+        }
+        SensorManager mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
+        List<Sensor> listSensors = mSensorManager.getSensorList( 
+                      Sensor.TYPE_ORIENTATION);
+        if (!listSensors.isEmpty()) {
+           Sensor orientationSensor = listSensors.get(0);
+           mSensorManager.registerListener(this, orientationSensor,
+                                      SensorManager.SENSOR_DELAY_GAME);
         }
     }
 
@@ -141,6 +154,22 @@ public class VistaJuego extends View {
               break;
        }
        mX=x; mY=y;       
-        return true;
+       return true;
+    }
+    
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy){}
+
+    private boolean hayValorInicial = false;
+    private float valorInicial;
+
+    @Override 
+    public void onSensorChanged(SensorEvent event) {
+    	float valor = event.values[1];
+        if (!hayValorInicial){
+        	valorInicial = valor;
+            hayValorInicial = true;
+        }
+        giroNave=(int) (valor-valorInicial)/3 ;
     }
 }
