@@ -38,6 +38,8 @@ public class Asteroides extends Activity {
 			}
 		});
 		Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
+        MediaPlayer mp = MediaPlayer.create(this, R.raw.audio);
+        mp.start();
 	}
 	
     public void lanzarAcercaDe(View view){
@@ -51,9 +53,6 @@ public class Asteroides extends Activity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         /** true -> el menú ya está visible */
-        
-        MediaPlayer mp = MediaPlayer.create(this, R.raw.audio);
-        mp.start();
         return true;
      }
     
