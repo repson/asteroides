@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class Asteroides extends Activity {
@@ -35,6 +36,7 @@ public class Asteroides extends Activity {
 				lanzarPuntuaciones(null);
 			}
 		});
+		Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
 	}
 	
     public void lanzarAcercaDe(View view){
@@ -53,30 +55,66 @@ public class Asteroides extends Activity {
     
      @Override 
      public boolean onOptionsItemSelected(MenuItem item) {
-    	 switch (item.getItemId()) {
-         	case R.id.salir:
-         		finish();
+    	switch (item.getItemId()) {
+        	case R.id.salir:
+        		finish();
                 break;
-         	case R.id.config:
+        	case R.id.config:
          		lanzarPreferencias(null);
          		break;
-         }
-    	 /** true -> consumimos el item, no se propaga */
-         return true;
+        }
+    	/** true -> consumimos el item, no se propaga */
+        return true;
      }
      
      public void lanzarPreferencias(View view){
-         Intent i = new Intent(this, Preferencias.class);
-         startActivity(i);
+        Intent i = new Intent(this, Preferencias.class);
+        startActivity(i);
      }
      
      public void lanzarPuntuaciones(View view) {
-    	 Intent i = new Intent(this, Puntuaciones.class);
-    	 startActivity(i);
+    	Intent i = new Intent(this, Puntuaciones.class);
+    	startActivity(i);
      }
      
      public void lanzarJuego(View view) {
-    	 Intent i = new Intent(this, Juego.class);
-    	 startActivity(i);
+    	Intent i = new Intent(this, Juego.class);
+    	startActivity(i);
+     }
+     
+     @Override 
+     protected void onStart() {
+    	super.onStart();
+    	Toast.makeText(this, "onStart", Toast.LENGTH_SHORT).show();
+    	}
+    	 
+     @Override 
+     protected void onResume() {
+    	super.onResume();
+    	Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
+     }
+    	 
+     @Override 
+     protected void onPause() {
+    	Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
+    	super.onPause();
+     }
+    	 
+     @Override 
+     protected void onStop() {
+    	Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show();
+    	super.onStop();
+     }
+    	 
+     @Override 
+     protected void onRestart() {
+    	super.onRestart();
+    	Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show();
+     }
+    	 
+     @Override 
+     protected void onDestroy() {
+    	Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show();
+    	super.onDestroy();
      }
 }
