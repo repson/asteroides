@@ -2,6 +2,7 @@ package com.example.asteroides;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -50,6 +51,9 @@ public class Asteroides extends Activity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         /** true -> el menú ya está visible */
+        
+        MediaPlayer mp = MediaPlayer.create(this, R.raw.audio);
+        mp.start();
         return true;
      }
     
@@ -86,6 +90,8 @@ public class Asteroides extends Activity {
      protected void onStart() {
     	super.onStart();
     	Toast.makeText(this, "onStart", Toast.LENGTH_SHORT).show();
+    	MediaPlayer mp = MediaPlayer.create(this, R.raw.audio);
+    	mp.start();
      }
     	 
      @Override 
@@ -98,6 +104,8 @@ public class Asteroides extends Activity {
      protected void onPause() {
     	Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
     	super.onPause();
+    	MediaPlayer mp = MediaPlayer.create(this, R.raw.audio);
+    	mp.pause();
      }
     	 
      @Override 
