@@ -153,12 +153,37 @@ public class VistaJuego extends View implements SensorEventListener{
     }
     
     class ThreadJuego extends Thread {
-       @Override
-       public void run() {
-              while (true) {
-                     actualizaFisica();
-              }
-       }
+    	private boolean pausa,corriendo;
+    	 
+    	public synchronized void pausar() {
+    		pausa = true;
+    	}
+    	 
+    	public synchronized void reanudar() {
+    	    pausa = false;
+    	    notify();
+    	}
+    	 
+    	public void detener() {
+    	    corriendo = false;
+    	    if (pausa) reanudar();
+    	}
+    	 
+    	@Override
+    	public void run() {
+    		corriendo = true;
+    	    while (corriendo) {
+    	    	actualizaFisica();
+    	        synchronized (this) {
+    	        	while (pausa) {
+    	        		try {
+    	        			wait();
+    	                } catch (Exception e) {
+    	                }
+    	            }
+    	        }
+    	    }
+    	}
     }
     
     @Override
@@ -225,5 +250,9 @@ public class VistaJuego extends View implements SensorEventListener{
        tiempoMisil = (int) Math.min(this.getWidth() / Math.abs( misil.
           getIncX()), this.getHeight() / Math.abs(misil.getIncY())) - 2;
        misilActivo = true;
+	}
+
+	public ThreadJuego getThread() {
+		return thread;
 	}
 }

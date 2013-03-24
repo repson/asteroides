@@ -86,7 +86,7 @@ public class Asteroides extends Activity {
      protected void onStart() {
     	super.onStart();
     	Toast.makeText(this, "onStart", Toast.LENGTH_SHORT).show();
-    	}
+     }
     	 
      @Override 
      protected void onResume() {
