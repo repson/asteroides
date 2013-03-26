@@ -6,7 +6,8 @@
     android:layout_height="fill_parent"
     android:gravity="center"
     android:padding="30dip"
-    tools:context="Asteroides" >
+    tools:context="Asteroides"
+    android:background="@drawable/degradado" >
     
   <TextView 
     style="@style/TextoAsteroides"

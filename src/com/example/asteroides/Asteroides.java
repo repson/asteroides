@@ -1,5 +1,7 @@
 package com.example.asteroides;
 
+import java.io.IOException;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -39,6 +41,16 @@ public class Asteroides extends Activity {
 			}
 		});
 		Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
+    	mp = MediaPlayer.create(this, R.raw.audio);
+    	try {
+			mp.prepare();
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
     public void lanzarAcercaDe(View view){
@@ -94,7 +106,6 @@ public class Asteroides extends Activity {
      protected void onResume() {
     	super.onResume();
     	Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
-    	mp = MediaPlayer.create(this, R.raw.audio);
     	mp.start();
      }
     	 
@@ -102,7 +113,6 @@ public class Asteroides extends Activity {
      protected void onPause() {
     	Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
     	super.onPause();
-    	mp = MediaPlayer.create(this, R.raw.audio);
     	mp.pause();
      }
     	 
@@ -110,7 +120,6 @@ public class Asteroides extends Activity {
      protected void onStop() {
     	Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show();
     	super.onStop();
-    	mp = MediaPlayer.create(this, R.raw.audio);
     	mp.stop();
      }
     	 
@@ -118,6 +127,15 @@ public class Asteroides extends Activity {
      protected void onRestart() {
     	super.onRestart();
     	Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show();
+    	try {
+			mp.prepare();
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
      }
     	 
      @Override 
