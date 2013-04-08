@@ -1,10 +1,7 @@
 package com.example.asteroides;
 
-import java.io.IOException;
-
 import android.app.Activity;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,13 +16,13 @@ public class Asteroides extends Activity {
 
 	private Button bAcercaDe;
 	private Button bSalir;
-	public static AlmacenPuntuaciones almacen = 
-			new AlmacenPuntuacionesArray();
-	private MediaPlayer mp;
+	public static AlmacenPuntuaciones almacen = new AlmacenPuntuacionesArray();
+	// private MediaPlayer mp;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		startService(new Intent(Asteroides.this, ServicioMusica.class));
 		setContentView(R.layout.main);
 		bAcercaDe = (Button) findViewById(R.id.Button03);
 		bAcercaDe.setOnClickListener(new OnClickListener() {
@@ -41,16 +38,16 @@ public class Asteroides extends Activity {
 			}
 		});
 		Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
-    	mp = MediaPlayer.create(this, R.raw.audio);
-    	try {
-			mp.prepare();
-		} catch (IllegalStateException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    	// mp = MediaPlayer.create(this, R.raw.audio);
+//    	try {
+//			mp.prepare();
+//		} catch (IllegalStateException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 	
     public void lanzarAcercaDe(View view){
@@ -106,59 +103,60 @@ public class Asteroides extends Activity {
      protected void onResume() {
     	super.onResume();
     	Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
-    	mp.start();
+    	// mp.start();
      }
     	 
      @Override 
      protected void onPause() {
     	Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
     	super.onPause();
-    	mp.pause();
+    	// mp.pause();
      }
     	 
      @Override 
      protected void onStop() {
     	Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show();
     	super.onStop();
-    	mp.stop();
+    	// mp.stop();
      }
     	 
      @Override 
      protected void onRestart() {
     	super.onRestart();
     	Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show();
-    	try {
-			mp.prepare();
-		} catch (IllegalStateException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//    	try {
+//			mp.prepare();
+//		} catch (IllegalStateException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
      }
     	 
      @Override 
      protected void onDestroy() {
-    	Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show();
     	super.onDestroy();
+     	stopService(new Intent(Asteroides.this, ServicioMusica.class));
+    	Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show();
      }
      
      @Override
      protected void onSaveInstanceState(Bundle estadoGuardado){
         super.onSaveInstanceState(estadoGuardado);
-        if (mp != null) {
-        	int pos = mp.getCurrentPosition();
-            estadoGuardado.putInt("posicion", pos);
-        }
+//        if (mp != null) {
+//        	int pos = mp.getCurrentPosition();
+//            estadoGuardado.putInt("posicion", pos);
+//        }
      }
    
      @Override
      protected void onRestoreInstanceState(Bundle estadoGuardado){
         super.onRestoreInstanceState(estadoGuardado);
-        if (estadoGuardado != null && mp != null) {
-        	int pos = estadoGuardado.getInt("posicion");
-            mp.seekTo(pos);
-        }
+//        if (estadoGuardado != null && mp != null) {
+//        	int pos = estadoGuardado.getInt("posicion");
+//            mp.seekTo(pos);
+//        }
      }
 }

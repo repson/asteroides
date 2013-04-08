@@ -11,9 +11,11 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/TemaAsteroides" >
+        <service android:name=".ServicioMusica" />
         <activity 
             android:name="com.example.asteroides.Asteroides"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
