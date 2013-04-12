@@ -64,7 +64,7 @@ public class Asteroides extends Activity {
         return true;
      }
     
-     @Override 
+     @Override
      public boolean onOptionsItemSelected(MenuItem item) {
     	switch (item.getItemId()) {
         	case R.id.salir:
@@ -88,9 +88,23 @@ public class Asteroides extends Activity {
     	startActivity(i);
      }
      
+     @Override
+     protected void onActivityResult(int requestCode, int resultCode, Intent data){
+         super.onActivityResult(requestCode, resultCode, data);
+         if (requestCode==1234 & resultCode==RESULT_OK & data!=null) {
+            int puntuacion = data.getExtras().getInt("puntuacion");
+            String nombre = "Yo";
+            // Mejor leerlo desde un Dialog o una nueva actividad                       //AlertDialog.Builder
+            almacen.guardaPuntuacion(puntuacion, nombre, System.currentTimeMillis());
+            lanzarPuntuaciones(null);
+         }
+      }
+     
      public void lanzarJuego(View view) {
-    	Intent i = new Intent(this, Juego.class);
-    	startActivity(i);
+    	// Intent i = new Intent(this, Juego.class);
+    	// startActivity(i);
+    	 Intent i = new Intent(this, Juego.class);
+    	 startActivityForResult(i, 1234);
      }
      
      @Override 

@@ -11,6 +11,7 @@ public class Juego extends Activity {
 		super.onCreate(savedInstanceState);
 	    setContentView(R.layout.juego);
 	    vistaJuego = (VistaJuego) findViewById(R.id.VistaJuego);
+	    vistaJuego.setPadre(this);
 	}
 	
 	@Override
