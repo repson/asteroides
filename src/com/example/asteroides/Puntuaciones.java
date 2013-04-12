@@ -13,8 +13,7 @@ public class Puntuaciones extends ListActivity {
 	public void onCreate(Bundle saveInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.puntuaciones);
-		setListAdapter(new MiAdaptador(this,
-	             Asteroides.almacen.listaPuntuaciones(10)));
+		setListAdapter(new MiAdaptador(this, Asteroides.almacen.listaPuntuaciones(10)));
 	}
 	
 	@Override
@@ -22,7 +21,7 @@ public class Puntuaciones extends ListActivity {
             	View view, int position, long id) {
 		super.onListItemClick(listView, view, position, id);
 		Object o = getListAdapter().getItem(position);
-		Toast.makeText(this, "Selecci√≥n: " + Integer.toString(position)
+		Toast.makeText(this, "Selección: " + Integer.toString(position)
 				+  " - " + o.toString(),Toast.LENGTH_LONG).show();
 	}
 }

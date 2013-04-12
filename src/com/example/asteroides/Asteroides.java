@@ -48,6 +48,7 @@ public class Asteroides extends Activity {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
+		almacen = new AlmacenPuntuacionesPreferencias(this);
 	}
 	
     public void lanzarAcercaDe(View view){
