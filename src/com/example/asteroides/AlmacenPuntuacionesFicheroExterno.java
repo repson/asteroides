@@ -9,6 +9,7 @@ import java.util.Vector;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
+import android.widget.Toast;
 
 public class AlmacenPuntuacionesFicheroExterno implements AlmacenPuntuaciones {
 
@@ -29,6 +30,12 @@ public class AlmacenPuntuacionesFicheroExterno implements AlmacenPuntuaciones {
                  f.close();
           } catch (Exception e) {
                  Log.e("Asteroides", e.getMessage(), e);
+          }
+          
+          String stadoSD = Environment.getExternalStorageState();
+          if (!stadoSD.equals(Environment.MEDIA_MOUNTED)) {
+        	  Toast.makeText(context, "No puedo escribir en la memoria externa", Toast.LENGTH_LONG).show();
+        	  return;
           }
     }
 
@@ -51,6 +58,13 @@ public class AlmacenPuntuacionesFicheroExterno implements AlmacenPuntuaciones {
           } catch (Exception e) {
               Log.e("Asteroides", e.getMessage(), e);
           }
+          
+          String stadoSD = Environment.getExternalStorageState();
+          if (!stadoSD.equals(Environment.MEDIA_MOUNTED) && !stadoSD.equals(Environment.MEDIA_MOUNTED_READ_ONLY)) {
+        	  Toast.makeText(context, "No puedo leer en la memoria externa", Toast.LENGTH_LONG).show();
+        	  return result;
+          }
+          
           return result;
     }
 }
