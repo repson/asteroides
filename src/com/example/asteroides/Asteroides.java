@@ -17,6 +17,7 @@ public class Asteroides extends Activity {
 	private Button bAcercaDe;
 	private Button bSalir;
 	public static AlmacenPuntuaciones almacen = new AlmacenPuntuacionesArray();
+
 	// private MediaPlayer mp;
 	
 	@Override
@@ -48,7 +49,8 @@ public class Asteroides extends Activity {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-		almacen = new AlmacenPuntuacionesPreferencias(this);
+		// almacen = new AlmacenPuntuacionesPreferencias(this);
+		almacen = new AlmacenPuntuacionesFicheroInterno(this);
 	}
 	
     public void lanzarAcercaDe(View view){
