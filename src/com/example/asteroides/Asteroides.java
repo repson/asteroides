@@ -2,7 +2,9 @@ package com.example.asteroides;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -50,7 +52,7 @@ public class Asteroides extends Activity {
 //			e.printStackTrace();
 //		}
 		// almacen = new AlmacenPuntuacionesPreferencias(this);
-		almacen = new AlmacenPuntuacionesFicheroInterno(this);
+		// almacen = new AlmacenPuntuacionesFicheroExterno(this);
 	}
 	
     public void lanzarAcercaDe(View view){
@@ -63,7 +65,7 @@ public class Asteroides extends Activity {
         super.onCreateOptionsMenu(menu);
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
-        /** true -> el menú ya está visible */
+        /** true -> el menu ya esta visible */
         return true;
      }
     
@@ -119,6 +121,25 @@ public class Asteroides extends Activity {
      @Override 
      protected void onResume() {
     	super.onResume();
+    	int almacenamiento;
+    	PreferenceManager.setDefaultValues(this, R.xml.preferencias, false); 
+    	SharedPreferences almacenPref = PreferenceManager.getDefaultSharedPreferences(this);
+    	
+    	switch (Integer.parseInt(almacenPref.getString("almacenamiento", "1"))) {
+    		case 0:
+    			almacen = new AlmacenPuntuacionesArray();
+    			break;
+    		case 1:
+    			almacen = new AlmacenPuntuacionesPreferencias(this);
+    			break;
+    		case 2:
+    			almacen = new AlmacenPuntuacionesFicheroInterno(this);
+    			break;
+    		case 3:
+    			almacen = new AlmacenPuntuacionesFicheroExterno(this);
+    			break;
+    		}
+    	
     	Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
     	// mp.start();
      }

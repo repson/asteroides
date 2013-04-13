@@ -18,4 +18,11 @@
     android:title="@string/NumeroFragmentos"
     android:summary="@string/FragmentosSummary"
     android:defaultValue="3"/>
+  <ListPreference 
+      android:key="almacenamientos"
+      android:title="@string/AlmacenamientosValores"
+      android:summary="@string/AlmacenamientosSummary"
+      android:entries="@array/tiposAlmacenamientos"
+      android:entryValues="@array/tiposAlmacenamientosValores"
+      android:defaultValue="1"/>
 </PreferenceScreen>

@@ -9,6 +9,8 @@ package com.example.asteroides;
 
 public final class R {
     public static final class array {
+        public static final int tiposAlmacenamientos=0x7f070002;
+        public static final int tiposAlmacenamientosValores=0x7f070003;
         public static final int tiposGraficos=0x7f070000;
         public static final int tiposGraficosValores=0x7f070001;
     }
@@ -67,6 +69,8 @@ public final class R {
     }
     public static final class string {
         public static final int Acercade=0x7f090002;
+        public static final int AlmacenamientosSummary=0x7f090012;
+        public static final int AlmacenamientosValores=0x7f090011;
         public static final int Arrancar=0x7f090000;
         public static final int Configurar=0x7f090001;
         public static final int FragmentosSummary=0x7f090010;

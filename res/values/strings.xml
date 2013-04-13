@@ -17,4 +17,6 @@
 	<string name="MusicaSummary">"Se reproduce música de fondo"</string>
 	<string name="GraficosSummary">"Se escoge la representación de gráficos"</string>
 	<string name="FragmentosSummary">"En cuantos trozos se divide un asteroide"</string>
+	<string name="AlmacenamientosValores">"Tipos de almacenamientos"</string>
+	<string name="AlmacenamientosSummary">"Se escoge la forma de almacenar los datos"</string>
 </resources>
