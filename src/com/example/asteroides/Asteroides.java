@@ -138,6 +138,9 @@ public class Asteroides extends Activity {
     		case 3:
     			almacen = new AlmacenPuntuacionesFicheroExterno(this);
     			break;
+    		case 4:
+    			almacen = new AlmacenPuntuacionesXML_SAX(this);
+    			break;
     		}
     	
     	Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
